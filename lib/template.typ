@@ -81,7 +81,7 @@
   studentid: "23000xxxxx",
   blindid: "L2023XXXXX",
   cthesisname: "博士研究生学位论文",
-  cheader: "北京大学博士学位论文",
+  cheader: none,  // 默认使用 ctitle
   ctitle: "北京大学学位论文 Typst 模板",
   etitle: "Typst Template for Peking University Dissertations",
   school: "某个学院",
@@ -154,11 +154,14 @@
     }
   }
 
+  // 如果 cheader 未指定，默认使用 ctitle
+  let effective-header = if cheader == none { ctitle } else { cheader }
+
   // ========== 页面设置 ==========
   set page(
     "a4",
     margin: (top: 3cm, bottom: 2.5cm, left: 2.6cm, right: 2.6cm),
-    header: styles.make-header(cheader: cheader),
+    header: styles.make-header(cheader: effective-header),
     footer: styles.make-footer(),
   )
 
