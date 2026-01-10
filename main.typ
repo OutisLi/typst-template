@@ -7,6 +7,11 @@
 #import "lib/template.typ": *
 
 #show: doc => conf(
+  ctitle: "北京大学学位论文 Typst 模板示例",
+  etitle: "Typst Template Example Document",
+  cauthor: "张三",
+  school: "北京大学某某学院",
+  // date: (year: 2026, month: 1, day: 15), // 可选：手动指定日期，默认使用当前时间
   cheader: "北京大学博士学位论文",
   first-line-indent: 2em,
   outlinedepth: 3,

@@ -49,6 +49,31 @@
 #import "pages.typ"
 #import "styles.typ"
 
+// 简化标题页
+#let title-page(
+  ctitle: none,
+  etitle: none,
+  cauthor: none,
+  school: none,
+  date: none,
+) = {
+  set text(font: 字体.宋体)
+  align(center + horizon)[
+    #v(30%)
+    #text(size: 25pt, weight: "bold")[#ctitle]
+    #v(0.8em)
+    #text(size: 17pt, font: "Times New Roman")[#etitle]
+    #v(4em)
+    #text(size: 15pt)[#cauthor]
+    #v(0.5em)
+    #text(size: 13pt)[#school]
+    #v(0.5em)
+    #text(size: 13pt)[#date.year 年 #date.month 月 #date.day 日]
+    #v(30%)
+  ]
+  pagebreak(weak: true)
+}
+
 // 主配置函数
 #let conf(
   cauthor: "张三",
@@ -66,7 +91,11 @@
   direction: "某个研究方向",
   csupervisor: "李四",
   esupervisor: "Si Li",
-  date: (year: 2026, month: 6),
+  date: (
+    year: datetime.today().year(),
+    month: datetime.today().month(),
+    day: datetime.today().day(),
+  ),
   // 学位类型："academic"（学术学位）或 "professional"（专业学位）
   degree-type: "academic",
   cabstract: [],
@@ -193,6 +222,9 @@
   )
   show ref: it => styles.ref-show-rule(it, supplements: merged-supplements)
   show bibliography: it => styles.bibliography-show-rule(it)
+
+  // ========== 标题页 ==========
+  title-page(ctitle: ctitle, etitle: etitle, cauthor: cauthor, school: school, date: date)
 
   // ========== 目录和列表 ==========
   set align(left + top)
