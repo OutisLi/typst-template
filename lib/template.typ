@@ -35,15 +35,11 @@
 #import "config.typ": appendix, 字体, 字号, 引用记号
 #import "utils.typ": chinesenumbering
 #import "components.typ": booktab, chineseoutline, codeblock, listoffigures
-#import "styles.typ": (
-  sym-bullet, sym-square-filled, sym-square-filled-rotated,
-)
+#import "styles.typ": sym-bullet, sym-square-filled, sym-square-filled-rotated
 
 // 高级用户 API：导出内部计数器和状态，用于自定义章节编号等场景
 // 注意：这些是内部实现细节，未来版本可能会有变化
-#import "config.typ": (
-  appendixcounter, chaptercounter, partcounter, skippedstate,
-)
+#import "config.typ": appendixcounter, chaptercounter, partcounter, skippedstate
 
 // 内部使用的模块
 #import "pages.typ"
@@ -81,7 +77,7 @@
   studentid: "23000xxxxx",
   blindid: "L2023XXXXX",
   cthesisname: "博士研究生学位论文",
-  cheader: none,  // 默认使用 ctitle
+  cheader: none, // 默认使用 ctitle
   ctitle: "北京大学学位论文 Typst 模板",
   etitle: "Typst Template for Peking University Dissertations",
   school: "某个学院",
@@ -228,6 +224,29 @@
 
   // ========== 标题页 ==========
   title-page(ctitle: ctitle, etitle: etitle, cauthor: cauthor, school: school, date: date)
+
+  // ========== 中文摘要 ==========
+  if cabstract != [] {
+    set align(left + top)
+    pages.abstract-page-zh(
+      ckeywords: ckeywords,
+      first-line-indent: first-line-indent,
+    )[#cabstract]
+    smartpagebreak()
+  }
+
+  // ========== 英文摘要 ==========
+  if eabstract != [] {
+    pages.abstract-page-en(
+      etitle: etitle,
+      eauthor: eauthor,
+      emajor: emajor,
+      esupervisor: esupervisor,
+      ekeywords: ekeywords,
+      blind: blind,
+    )[#eabstract]
+    smartpagebreak()
+  }
 
   // ========== 目录和列表 ==========
   set align(left + top)

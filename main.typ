@@ -12,6 +12,14 @@
   cauthor: "张三",
   school: "北京大学某某学院",
   // date: (year: 2026, month: 1, day: 15), // 可选：手动指定日期，默认使用当前时间
+  cabstract: [
+    摘要内容...
+  ],
+  // ckeywords: ("关键词1", "关键词2"),
+  // eabstract: [
+  //   Abstract content...
+  // ],
+  // ekeywords: ("Keyword 1", "Keyword 2"),
   outlinedepth: 4,
   listofimage: true,
   listoftable: true,
