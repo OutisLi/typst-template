@@ -26,6 +26,11 @@
   listofcode: false,
   alwaysstartodd: false,
   preview: true,
+  // ========== 参考文献 ==========
+  bibcontent: read("ref.bib"), // 参考文献文件内容
+  bibstyle: "numeric", // 引用风格："numeric" 或 "author-date"
+  bibversion: "2025", // GB/T 7714 版本："2015" 或 "2025"
+  // override-bib: false, // 自定义引用样式时设为 true
   doc,
 )
 
@@ -109,6 +114,3 @@ $ F(omega) = integral_(-infinity)^infinity f(t) e^(-i omega t) dif t $ <ft1>
 = 附录
 
 在此处添加附录内容...
-
-// ========== Bibliography ==========
-#bibliography("ref.bib", style: "gb-7714-2015-numeric")
