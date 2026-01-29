@@ -104,13 +104,32 @@ $ F(omega) = integral_(-infinity)^infinity f(t) e^(-i omega t) dif t $ <ft1>
 
 也可以使用行内公式：设 $alpha > 0$，则 $sum_(n=1)^infinity 1/n^alpha = zeta(alpha)$。
 
-= 总结与展望
+= 快速开始 <quickstart>
 
-在此处撰写总结和展望...
+#include "chap/ch01-quickstart.typ"
 
-// ========== Appendix ==========
+= 模板配置选项 <config>
+
+#include "chap/ch02-config.typ"
+
+= Typst 基本功能 <typst-basics>
+
+本章介绍 Typst 的基本语法和功能，帮助用户快速上手。
+
+#include "chap/ch03-basics.typ"
+
+= 常见问题与解决方案 <faq>
+
+#include "chap/ch04-faq.typ"
+
+= 进阶使用技巧 <advanced>
+
+#include "chap/ch05-advanced.typ"
+
 #appendix()
 
-= 附录
+= 关于 Typst <about>
 
-在此处添加附录内容...
+#include "chap/appendix-about.typ"
+
+#pagebreak()
