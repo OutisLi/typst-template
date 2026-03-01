@@ -48,7 +48,7 @@
   仿宋: ("Times New Roman", "FangSong", "STFangsong"),
   宋体: ("Times New Roman", "SimSun", "Songti SC", "STSong"),
   黑体: ("Times New Roman", "SimHei", "Heiti SC", "STHeiti"),
-  楷体: ("Times New Roman", "KaiTi_GB2312", "SimKai", "Kaiti SC", "STKaiti"),
+  楷体: ("Times New Roman", "KaiTi_GB2312", "Kaiti SC", "STKaiti"),
   代码: ("Maple Mono NL NF", "Hack", "Menlo", "Monaco", "DejaVu Sans Mono", "Courier New"),
 )
 
